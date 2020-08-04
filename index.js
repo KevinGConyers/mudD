@@ -30,8 +30,8 @@ client.on('message', message => {
 	const command = args.shift().toLowerCase();
 
 	if (!client.commands.has(command)) return;
-	if (!(message.guild.id in session_config) && !(command === 'make-arena')) {
-		message.channel.send("Please make an arena");
+	if (!(message.guild.id in session_config) && !(command === 'make-arena') && !(command === 'help')) {
+		message.channel.send("Please make an arena or run !help");
 		return;
 	}
 	try {
