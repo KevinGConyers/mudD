@@ -1,21 +1,26 @@
 require('dotenv').config();
+config = require('./.config.json')
 const Discord = require('discord.js');
 const client = new Discord.Client();
 
 
-var client_token = ""
+const client_token = config.token
+const prefix = config.prefix
 
-if (process.env.MUDDTOKEN) {
-	client_token = process.env.MUDDTOKEN
-} else {
-	console.log("no token defined")
-	exit()
-}
 
 
 
 client.once('ready', () => {
 	console.log('Ready!');
+});
+
+
+client.on('message', message => {
+	if (!message.content.startsWith(prefix) || message.author.bot) return;
+
+	const args = message.content.slice(prefix.length).trim().split(' ');
+	const command = args.shift().toLowerCase();
+		message.channel.send(`Command: ${command}`)
 });
 
 client.login(client_token);
