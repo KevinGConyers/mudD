@@ -1,4 +1,4 @@
-require('dotenv').config();
+//require('dotenv').config();
 config = require('./.config.json')
 const Discord = require('discord.js');
 const client = new Discord.Client();
@@ -6,6 +6,7 @@ const client = new Discord.Client();
 
 const client_token = config.token
 const prefix = config.prefix
+var fight_channel = config.
 
 
 
@@ -24,3 +25,7 @@ client.on('message', message => {
 });
 
 client.login(client_token);
+
+updateFightChannel(){
+
+}
