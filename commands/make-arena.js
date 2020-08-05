@@ -1,10 +1,10 @@
+const { Users, CurrencyShop, Servers } = require('../dbObjects');
+
 module.exports = {
 	name: 'make-arena',
 	description: 'sets the current channel as the arena',
 	execute(message, args, session_config) {
 		session_config = args[args.length - 1]
-		Servers = args[args.length - 3]
-
         session_config[message.guild.id] = {"fight_channel": message.channel, "active_monster": "None"}
 		message.channel.send('Channel Set as Arena')
 		//console.log(message.guild)

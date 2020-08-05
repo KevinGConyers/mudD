@@ -4,6 +4,11 @@ module.exports = (sequelize, DataTypes) => {
 			type: DataTypes.STRING,
 			primaryKey: true,
 		},
+		class: {
+			type: DataTypes.STRING,
+			defaultValue: "None",
+			allowNull: false,	
+		},
 		balance: {
 			type: DataTypes.INTEGER,
 			defaultValue: 0,

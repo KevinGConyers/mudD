@@ -1,6 +1,6 @@
 module.exports = (sequelize, DataTypes) => {
 	return sequelize.define('Servers', {
-		sever_id: {
+		server_id: {
 			type: DataTypes.STRING,
 			primaryKey: true,
 		},
