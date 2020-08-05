@@ -29,6 +29,13 @@ for (const file of commandFiles) {
 }
 
 client.once('ready', () => {
+	client.user.setPresence({
+        status: "online",  //You can show online, idle....
+        game: {
+            name: "Using !help",  //The message shown
+            type: "PLAYING" //PLAYING: WATCHING: LISTENING: STREAMING:
+        }
+    });
 	console.log("Ready");
 });
 

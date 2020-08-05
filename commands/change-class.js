@@ -20,7 +20,7 @@ module.exports = {
                 class: "MudD_" + rclass,
                 balance: 5
             });
-            message.channel.send("You are now a " + args[0] + " in the " + message.guild.name + " instance ")
+            message.author.send("You are now a " + args[0] + " in the " + message.guild.name + " instance ")
         }
         catch (e) {
             console.log(e)
